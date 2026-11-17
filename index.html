@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#080b12">
-<title>Shumal Technology | فروشگاه دیجیتال</title>
+<title>Phonika Software | فروشگاه دیجیتال</title>
 <style>
 :root{--bg:#080b12;--panel:#111827;--panel2:#172033;--text:#f5f7fb;--muted:#9ca9bd;--accent:#18c7b5;--accent2:#6d5dfc;--line:#253047}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;line-height:1.7}
@@ -30,18 +30,33 @@ footer{border-top:1px solid var(--line);background:#070a10;padding:28px 22px;col
 .modal{position:fixed;inset:0;background:#000b;display:none;place-items:center;padding:20px;z-index:30}.modal.show{display:grid}.dialog{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px;max-width:440px;width:100%}.dialog h3{margin-top:0}.close{float:left;background:transparent;border:0;color:white;font-size:22px;cursor:pointer}
 @media(max-width:850px){.categories{grid-template-columns:repeat(3,1fr)}.products{grid-template-columns:repeat(2,1fr)}.hero{padding:28px;min-height:310px}}
 @media(max-width:520px){.nav{gap:12px}.links{order:3;width:100%;overflow:auto;white-space:nowrap}.products{grid-template-columns:1fr 1fr;gap:9px}.thumb{height:110px}.info{padding:10px}.info h3{font-size:14px}.desc{font-size:11px}.hero{padding:22px}.categories{gap:8px}.cat{font-size:12px}}
+
+/* Phonika AI assistant */
+.ai-launch{position:fixed;left:22px;bottom:22px;z-index:25;border:0;border-radius:999px;padding:13px 18px;background:linear-gradient(120deg,var(--accent),#70e2d5);color:#04201d;font-weight:900;box-shadow:0 8px 30px #0008;cursor:pointer}
+.ai-panel{position:fixed;left:22px;bottom:82px;width:min(390px,calc(100vw - 28px));height:min(570px,calc(100vh - 115px));z-index:26;background:#101827;border:1px solid #34435b;border-radius:18px;box-shadow:0 18px 60px #000b;display:none;overflow:hidden;flex-direction:column}
+.ai-panel.open{display:flex}.ai-head{padding:14px 16px;background:linear-gradient(110deg,#103c40,#25204a);display:flex;align-items:center;justify-content:space-between}
+.ai-head strong{display:block}.ai-head small{color:#c1d0df}.ai-close{border:0;background:transparent;color:white;font-size:24px;cursor:pointer}
+.ai-messages{padding:14px;flex:1;overflow:auto;display:flex;flex-direction:column;gap:10px}
+.ai-msg{max-width:88%;padding:10px 12px;border-radius:13px;font-size:13px;white-space:pre-wrap;overflow-wrap:anywhere}
+.ai-msg.bot{align-self:flex-start;background:#1c293d;color:#edf4ff;border-bottom-right-radius:3px}
+.ai-msg.user{align-self:flex-end;background:#0d625c;color:white;border-bottom-left-radius:3px}
+.ai-form{padding:12px;border-top:1px solid var(--line);display:flex;gap:8px}
+.ai-form input{min-width:0;flex:1;border:1px solid #35445b;background:#0a111d;color:white;border-radius:10px;padding:11px;outline:0}
+.ai-form button{border:0;border-radius:10px;padding:0 15px;background:var(--accent);font-weight:bold;cursor:pointer}
+.ai-note{font-size:10px;color:#92a2b7;padding:0 14px 10px}
+
 </style>
 </head>
 <body>
 <header class="top"><nav class="nav">
- <a class="logo" href="#"><span>SHUMAL</span> TECHNOLOGY</a>
+ <a class="logo" href="#"><span>PHONIKA</span> SOFTWARE</a>
  <form class="search" id="searchForm"><input id="searchInput" placeholder="جستجوی برنامه، فیلم، آموزش..." aria-label="جستجو"><button>جستجو</button></form>
  <div class="links"><a href="#home">خانه</a><a href="#new">تازه‌ها</a><a href="#popular">محبوب‌ترین‌ها</a><a href="#contact">تماس با ما</a></div>
 </nav></header>
 <main id="home">
 <section class="hero">
  <div class="hero-content"><div class="eyebrow">دنیای دیجیتال در یک‌جا</div>
- <h1>به فروشگاه دیجیتال<br>Shumal Technology خوش آمدید</h1>
+ <h1>به فروشگاه دیجیتال<br>Phonika Software خوش آمدید</h1>
  <p>بسته‌های آموزشی، برنامه‌های موبایل و کامپیوتر، بازی‌ها، فیلم و کتاب‌های دیجیتال را آسان پیدا کنید.</p>
  <div class="actions"><a class="btn" href="#categories">مشاهده دسته‌بندی‌ها</a><a class="btn secondary" href="#new">محصولات تازه</a></div>
  </div>
@@ -57,7 +72,7 @@ footer{border-top:1px solid var(--line);background:#070a10;padding:28px 22px;col
 <section class="section" id="new"><div class="section-head"><h2>تازه‌ترین محصولات</h2><small>نمونه نمایشی — قابل ویرایش از کد</small></div><div class="products" id="productGrid"></div><div class="empty" id="empty">محصولی با این مشخصات پیدا نشد.</div></section>
 <section class="section" id="popular"><div class="section-head"><h2>محبوب‌ترین‌ها</h2><small>محصولات پیشنهادی</small></div><p style="color:var(--muted)">در نسخه متصل به پایگاه داده، این بخش بر اساس تعداد دانلود و خرید مرتب خواهد شد.</p></section>
 </main>
-<footer id="contact"><div class="foot"><div><strong>SHUMAL TECHNOLOGY</strong><br>پیوند شما با دنیای تکنولوژی</div><div>تماس با ما: شماره تماس خود را اینجا وارد کنید<br>شبکه‌های اجتماعی: لینک صفحات خود را اضافه کنید</div><div>© 2026 تمامی حقوق محفوظ است.</div></div></footer>
+<footer id="contact"><div class="foot"><div><strong>PHONIKA SOFTWARE</strong><br>پیوند شما با دنیای تکنولوژی</div><div>تماس با ما: شماره تماس خود را اینجا وارد کنید<br>شبکه‌های اجتماعی: لینک صفحات خود را اضافه کنید</div><div>© 2026 Phonika Software — تمامی حقوق محفوظ است.</div></div></footer>
 <div class="modal" id="modal"><div class="dialog"><button class="close" id="close">×</button><h3 id="modalTitle"></h3><p id="modalDesc" style="color:var(--muted)"></p><p id="modalPrice"></p><small style="color:var(--muted)">برای فعال‌سازی خرید و دانلود واقعی، باید حساب کاربری، سرور و درگاه پرداخت وصل شود.</small></div></div>
 <script>
 const products=[
@@ -83,5 +98,7 @@ document.getElementById("searchInput").addEventListener("input",e=>render(active
 grid.addEventListener("click",e=>{const b=e.target.closest("[data-index]");if(!b)return;const p=products[+b.dataset.index];document.getElementById("modalTitle").textContent=p.title;document.getElementById("modalDesc").textContent=p.desc;document.getElementById("modalPrice").textContent=p.price;document.getElementById("modal").classList.add("show")});
 document.getElementById("close").onclick=()=>document.getElementById("modal").classList.remove("show");
 document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")e.currentTarget.classList.remove("show")});
+
 </script>
+
 </body></html>
